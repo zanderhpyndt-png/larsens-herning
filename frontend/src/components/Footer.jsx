@@ -17,6 +17,18 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Signature quote */}
+        <div className="mt-16 md:mt-24 text-center">
+          <div className="font-display italic text-3xl md:text-5xl text-neutral-100">
+            "Vi ses hos <span className="text-amber-400 text-glow-amber">LARSEN</span>."
+          </div>
+          <div className="mt-4 inline-flex items-center gap-3 text-[10px] uppercase tracking-eyebrow text-neutral-500">
+            <span className="h-px w-8 bg-amber-400/40" />
+            Torben & holdet
+            <span className="h-px w-8 bg-amber-400/40" />
+          </div>
+        </div>
+
         <div className="mt-16 md:mt-24 grid md:grid-cols-3 gap-10 md:gap-16">
           <div>
             <div className="text-[10px] uppercase tracking-eyebrow text-amber-400/70 mb-4">Følg os</div>

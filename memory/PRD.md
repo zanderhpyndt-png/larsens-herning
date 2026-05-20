@@ -1,55 +1,63 @@
 # LARSEN — Herning City Landing Page
 
 ## Original Problem Statement
-Build an ultra-modern, cinematic landing page for LARSEN — Herning City (Bredgade 48, Herning, Denmark). A blend of luxury café, gourmet shop and late-night hangout. Sections: Hero, Featured products, Atmosphere, Reviews, Gallery, Location + opening hours, Footer. Aesthetic: dark mode, warm orange neon glow, glassmorphism, Apple-style animations, rainy Copenhagen night vibe, ambient particles, mouse glow, Scandinavian luxury + urban.
+Cinematic boutique-hospitality landing page for LARSEN Herning City (Bredgade 48). Dark mode, warm orange neon glow, glassmorphism, Apple-style animations, rainy Copenhagen night vibe, ambient particles, mouse glow, Scandinavian luxury.
 
-## User Choices
-- Stock images from Unsplash/Pexels (provided via design_guidelines)
-- Embedded Google Maps iframe (no API key)
-- Placeholder opening hours (Man–Tor 10–22, Fre–Lør 10–24, Søn 12–20) — to be updated
-- `#` placeholders for Instagram & Facebook
-- Backend with newsletter + contact form persistence (MongoDB)
+## User Choices Confirmed
+- Unsplash + real LARSEN photos
+- Google Maps iframe embed
+- Real opening hours (10–22 alle årets dage)
+- Real Facebook URL: facebook.com/LarsenHerningCity
+- Backend with newsletter + contact persistence
 
 ## Architecture
-- **Backend** (FastAPI + Motor):
-  - `POST/GET /api/newsletter` — email subscription (idempotent)
-  - `POST/GET /api/contact` — contact messages (name, email, message)
-  - `POST/GET /api/status` — health check
-- **Frontend** (React 19 + framer-motion + Tailwind + lucide-react + sonner):
-  - `pages/Landing.jsx` — composition root
-  - `components/`: Loader, MouseGlow, Particles, Header, Hero, Products, Atmosphere, Reviews, Gallery, LocationHours, ContactNewsletter, Footer
-  - `data/site.js` — content/image catalog
-  - `lib/api.js` — axios wrapper using `REACT_APP_BACKEND_URL`
+- **Backend (FastAPI + Motor)**: `/api/newsletter`, `/api/contact`, `/api/status`
+- **Frontend (React 19 + framer-motion + Tailwind)**: 
+  - `pages/Landing.jsx` — composition
+  - `components/`: Loader, Header, Hero, StoryHighlights, TonightAtLarsen, Products, Atmosphere, AboutTorben, Reviews, Gallery (lightbox+flash), LocationHours, ContactNewsletter, Footer, MouseGlow, Particles, AmbientSound, HyggeStatus, HyggeEasterEgg, WeatherSync
+  - `lib/api.js`, `lib/vinylCrackle.js`
+  - `data/site.js` — content + image catalog
+  - `public/cafe-ambient.mp3`, `public/torben-portrait.jpg` (AI-generated)
 
-## What's Implemented (2026-05-20)
-- Elegant loader with neon-flicker logo
-- Sticky glassmorphism header with smooth scroll-spy + mobile hamburger
-- Cinematic hero with rainy overlay + ambient particles + mouse glow
-- 5 product cards (chokolade, specialøl, vin, is, gavekurve) with hover zoom
-- Atmosphere split layout with floating quote card
-- Infinite marquee for 5 customer reviews
-- Bento gallery (asymmetric grid)
-- Dark-styled Google Maps embed + address + opening hours
-- Newsletter signup form (persists to MongoDB, success toast)
-- Contact form (persists to MongoDB, success toast)
-- Massive footer with social icons + nav + contact info
-- 100% test coverage: 9/9 backend, all frontend flows verified
+## Implemented Features (2026-05-20)
+### Day 1 — MVP
+- Loader with letter-by-letter L·A·R·S·E·N reveal + film scratch + vignette
+- Sticky glass header + smooth scroll-spy + mobile menu
+- Cinematic hero with parallax background, amber glow, rainy overlay
+- "Since 2020" badge in hero
+- StoryHighlights (Café/Vin/Chokolade/Gaver/Hygge) with Instagram-style modal
+- TonightAtLarsen daily-rotating recommendation
+- Products bento grid (5 items)
+- Atmosphere split layout
+- AboutTorben section with AI-generated cinematic portrait
+- Reviews infinite marquee
+- Gallery bento grid + lightbox with camera flash
+- LocationHours with dark-styled Google Maps
+- Newsletter + contact forms (persists to MongoDB)
+- Massive footer with "Vi ses hos LARSEN." quote
+- Ambient café sound toggle + synthesized vinyl crackle layer
+- HyggeStatus floating chip (time-based: morgenkaffe/eftermiddagshygge/aftenstemning/sene timer)
+- HyggeEasterEgg: type "hygge" → bass hit + neon flicker + "Du fandt hyggen"
+- WeatherSync: Open-Meteo API → adjusts rain intensity, neon brightness, sunset tint, wind drift via CSS data attrs
+- Glass cards with condensation/fog overlay (SVG noise)
+- btn-vibrate hover wobble on primary CTAs
+- AI-generated Torben portrait (Gemini Nano Banana, premium hygge editorial)
 
 ## Personas
-- **Lokal i Herning** — vil finde et hyggeligt stamsted og kontakte LARSEN
-- **Turist / Instagram-fan** — leder efter æstetik, billeder, location
-- **Gave-køber** — vil bestille gavekurv eller specialprodukter
+- Lokal i Herning, turist/Instagram-fan, gave-køber
 
 ## Backlog
-- **P1**: Send transactional email (Resend) when newsletter/contact form submits
-- **P1**: Add real opening hours, real social URLs, real contact email
-- **P2**: Add unique index on `newsletter.email`
-- **P2**: prefers-reduced-motion handling for rain + scroll indicator
-- **P2**: Replace stock images with real photography from LARSEN
-- **P3**: Product detail pages or e-shop integration
+- **P1**: Real Torben portrait (swap `/public/torben-portrait.jpg`)
+- **P1**: Real Instagram URL (currently `#`)
+- **P1**: Transactional email on newsletter/contact submit (Resend)
+- **P2**: Live Instagram feed (requires Meta Graph API token + business verification)
+- **P2**: Admin dashboard for newsletter + contact submissions
+- **P2**: Unique index on newsletter.email
+- **P2**: prefers-reduced-motion handling
 - **P3**: Multi-language (DA + EN)
-- **P3**: Instagram feed integration
+- **P3**: Product detail pages / e-shop
 
-## Next Tasks
-- Collect from user: real opening hours, real social links, real contact email, real photography
-- Optional: add admin dashboard to view newsletter subscribers + contact submissions
+## Integrations
+- Emergent Universal LLM Key in `/app/backend/.env` (used for one-shot Gemini Nano Banana portrait gen via `scripts/generate_torben_portrait.py`)
+- Open-Meteo public API (no key, fetched client-side for Herning lat/lon)
+- Google Maps embed iframe (no key)

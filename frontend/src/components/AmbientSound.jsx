@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
+import { createVinylCrackle } from "@/lib/vinylCrackle";
 
 export default function AmbientSound() {
   const audioRef = useRef(null);
+  const crackleRef = useRef(null);
+  const ctxRef = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [hinted, setHinted] = useState(false);
 
@@ -12,7 +15,6 @@ export default function AmbientSound() {
     audio.loop = true;
     audio.volume = 0;
     audioRef.current = audio;
-    // Subtle hint after loader fades
     const t = setTimeout(() => setHinted(true), 2500);
     const t2 = setTimeout(() => setHinted(false), 8000);
     return () => {
@@ -20,6 +22,8 @@ export default function AmbientSound() {
       clearTimeout(t2);
       audio.pause();
       audio.src = "";
+      if (crackleRef.current) crackleRef.current.stop();
+      if (ctxRef.current) ctxRef.current.close().catch(() => {});
     };
   }, []);
 
@@ -44,12 +48,23 @@ export default function AmbientSound() {
       try {
         await audio.play();
         setPlaying(true);
-        fadeTo(0.35, 900);
+        fadeTo(0.32, 900);
+        // Initialise vinyl crackle layer on first activation
+        if (!ctxRef.current) {
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          ctxRef.current = new Ctx();
+          crackleRef.current = createVinylCrackle(ctxRef.current);
+        }
+        if (ctxRef.current.state === "suspended") {
+          await ctxRef.current.resume();
+        }
+        crackleRef.current.setVolume(0.18, 900);
       } catch (e) {
-        // autoplay or load issue; ignore silently
+        /* autoplay blocked, ignore */
       }
     } else {
       fadeTo(0, 500);
+      if (crackleRef.current) crackleRef.current.setVolume(0, 500);
       setTimeout(() => audio.pause(), 520);
       setPlaying(false);
     }

@@ -59,7 +59,7 @@ export default function Header() {
 
           <button
             onClick={() => handleNav("kontakt")}
-            className="hidden md:inline-flex items-center text-xs uppercase tracking-eyebrow text-neutral-100 border border-white/15 rounded-full px-5 py-2 hover:border-amber-400 hover:text-amber-400 transition-all duration-300"
+            className="btn-vibrate hidden md:inline-flex items-center text-xs uppercase tracking-eyebrow text-neutral-100 border border-white/15 rounded-full px-5 py-2 hover:border-amber-400 hover:text-amber-400 transition-all duration-300"
             data-testid="header-visit-btn"
           >
             Besøg

@@ -14,6 +14,10 @@ import Footer from "@/components/Footer";
 import MouseGlow from "@/components/MouseGlow";
 import Particles from "@/components/Particles";
 import AmbientSound from "@/components/AmbientSound";
+import HyggeStatus from "@/components/HyggeStatus";
+import TonightAtLarsen from "@/components/TonightAtLarsen";
+import HyggeEasterEgg from "@/components/HyggeEasterEgg";
+import WeatherSync from "@/components/WeatherSync";
 
 export default function Landing() {
   const [loading, setLoading] = useState(true);
@@ -29,15 +33,17 @@ export default function Landing() {
       <MouseGlow />
       <Particles />
 
-      {/* Floating gradient orbs (light leaks) */}
-      <div className="light-leak bg-amber-500/25 w-[500px] h-[500px] top-[20%] -left-40" />
-      <div className="light-leak bg-orange-600/20 w-[600px] h-[600px] top-[80%] right-[-100px]" />
-      <div className="light-leak bg-amber-400/10 w-[700px] h-[700px] top-[160%] left-[30%]" />
+      {/* Floating gradient orbs (light leaks) — fixed so they don't extend scroll */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <div className="light-leak bg-amber-500/25 w-[500px] h-[500px] top-[20%] -left-40" />
+        <div className="light-leak bg-orange-600/20 w-[600px] h-[600px] top-[80%] right-[-100px]" />
+      </div>
 
       <Header />
       <main className="relative z-10">
         <Hero />
         <StoryHighlights />
+        <TonightAtLarsen />
         <Products />
         <Atmosphere />
         <AboutTorben />
@@ -48,6 +54,9 @@ export default function Landing() {
       </main>
       <Footer />
       <AmbientSound />
+      <HyggeStatus />
+      <HyggeEasterEgg />
+      <WeatherSync />
     </div>
   );
 }

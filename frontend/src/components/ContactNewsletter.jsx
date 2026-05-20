@@ -88,7 +88,7 @@ export default function ContactNewsletter() {
               <button
                 type="submit"
                 disabled={subscribing}
-                className="inline-flex items-center justify-center gap-2 bg-amber-500 text-neutral-950 rounded-full px-7 py-4 font-medium hover:bg-amber-400 transition-all duration-300 box-glow-amber disabled:opacity-60"
+                className="btn-vibrate inline-flex items-center justify-center gap-2 bg-amber-500 text-neutral-950 rounded-full px-7 py-4 font-medium hover:bg-amber-400 transition-all duration-300 box-glow-amber disabled:opacity-60"
                 data-testid="newsletter-submit-btn"
               >
                 {subscribing ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
@@ -149,7 +149,7 @@ export default function ContactNewsletter() {
               <button
                 type="submit"
                 disabled={sending}
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-amber-500 text-neutral-950 rounded-full px-8 py-4 font-medium hover:bg-amber-400 transition-all duration-300 box-glow-amber disabled:opacity-60"
+                className="btn-vibrate inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-amber-500 text-neutral-950 rounded-full px-8 py-4 font-medium hover:bg-amber-400 transition-all duration-300 box-glow-amber disabled:opacity-60"
                 data-testid="contact-submit-btn"
               >
                 {sending ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}

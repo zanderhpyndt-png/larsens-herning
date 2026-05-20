@@ -89,7 +89,7 @@ export default function Hero() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => scrollTo("kontakt")}
-              className="group inline-flex items-center justify-center gap-2 bg-amber-500 text-neutral-950 rounded-full px-8 py-4 font-medium tracking-wide hover:bg-amber-400 transition-all duration-300 box-glow-amber"
+              className="btn-vibrate group inline-flex items-center justify-center gap-2 bg-amber-500 text-neutral-950 rounded-full px-8 py-4 font-medium tracking-wide hover:bg-amber-400 transition-colors duration-300 box-glow-amber"
               data-testid="hero-cta-visit"
             >
               <MapPin size={18} />
@@ -97,11 +97,11 @@ export default function Hero() {
             </button>
             <button
               onClick={() => scrollTo("produkter")}
-              className="inline-flex items-center justify-center gap-2 glass-light text-neutral-100 rounded-full px-8 py-4 font-medium tracking-wide hover:bg-white/10 hover:border-amber-400/40 transition-all duration-300"
+              className="btn-vibrate inline-flex items-center justify-center gap-2 glass-light text-neutral-100 rounded-full px-8 py-4 font-medium tracking-wide hover:bg-white/10 hover:border-amber-400/40 transition-colors duration-300"
               data-testid="hero-cta-menu"
             >
               Se menu & favoritter
-              <ArrowDown size={16} className="group-hover:translate-y-0.5 transition" />
+              <ArrowDown size={16} />
             </button>
           </div>
         </motion.div>
