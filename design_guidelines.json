@@ -1,0 +1,164 @@
+{
+  "theme_and_archetype": {
+    "primary_archetype": "Archetype 5 (Jewel & Luxury) with a touch of Urban Nightlife",
+    "theme": "Dark Mode",
+    "vibe": "Cinematic, moody, expensive, warm orange neon glow, rainy Copenhagen night, Scandinavian minimalism, Instagrammable hidden gem."
+  },
+  "colors": {
+    "background": {
+      "base": "bg-neutral-950",
+      "surface": "bg-neutral-900/40",
+      "glass": "bg-black/40 backdrop-blur-2xl"
+    },
+    "text": {
+      "primary": "text-neutral-50",
+      "secondary": "text-neutral-400",
+      "accent": "text-amber-500"
+    },
+    "accents": {
+      "neon_orange": "amber-500",
+      "neon_glow": "shadow-[0_0_30px_rgba(245,158,11,0.3)]",
+      "gradient_glow": "bg-gradient-to-tr from-amber-600/20 via-orange-500/10 to-transparent"
+    },
+    "borders": {
+      "glass_edge": "border border-white/10",
+      "subtle": "border border-white/5"
+    }
+  },
+  "typography": {
+    "font_imports": [
+      "@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600&display=swap');"
+    ],
+    "headings": {
+      "family": "font-['Cormorant_Garamond',_serif]",
+      "h1": "text-5xl md:text-6xl lg:text-7xl tracking-tight leading-none font-medium",
+      "h2": "text-3xl md:text-4xl lg:text-5xl tracking-tight font-medium",
+      "h3": "text-2xl md:text-3xl font-medium"
+    },
+    "body": {
+      "family": "font-['Manrope',_sans-serif]",
+      "base": "text-base md:text-lg leading-relaxed font-light text-neutral-300",
+      "small": "text-sm uppercase tracking-[0.2em]"
+    }
+  },
+  "spacing_and_layout": {
+    "section_padding": "py-24 md:py-32",
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "grid_strategy": "Asymmetric Bento grid (Tetris Mode) for Gallery. Generous gaps (gap-8 to gap-12). Leave negative space for 'breathing room'. Mobile-first column stacking."
+  },
+  "surfaces_and_borders": {
+    "glassmorphism": "Use 'backdrop-blur-xl bg-black/40 border border-white/10' for sticky headers, floating cards, and the review carousel. Do not use flat gray.",
+    "cards": "Subtle border (border-white/5), flat dark background, slight image zoom on hover.",
+    "glow_effects": "Use absolute positioned blurred divs (blur-[100px]) with low opacity amber/orange to create floating light leaks behind sections."
+  },
+  "motion_and_animations": {
+    "scroll": "MANDATORY: Use lenis or a similar smooth scroll for that 'addictive scrolling feeling'.",
+    "entrance": "Staggered fade-up and slight blur-reveal for text using framer-motion.",
+    "micro_interactions": "Smooth scale on hover for images (duration-700 ease-out), glowing borders on hover for interactive cards.",
+    "particles": "Add ambient floating particles (using framer-motion or a lightweight canvas library) in the Hero and Atmosphere sections for the 'rainy night' aesthetic."
+  },
+  "components": {
+    "navigation": "Glassmorphism sticky header with a blur. Visible links on desktop.",
+    "hero": "Fullscreen relative container, absolute image with bg-black/50 overlay, text centered or left-aligned with a text-shadow for readability.",
+    "buttons": {
+      "primary": "bg-amber-600 text-white rounded-full px-8 py-4 hover:bg-amber-500 transition-colors shadow-[0_0_20px_rgba(217,119,6,0.4)]",
+      "secondary": "backdrop-blur-md bg-white/5 border border-white/20 text-white rounded-full px-8 py-4 hover:bg-white/10 transition-colors"
+    },
+    "product_cards": "Custom HTML/Tailwind. Image container with overflow-hidden, image scales on hover. Text below image."
+  },
+  "image_urls": [
+    {
+      "url": "https://static.prod-images.emergentagent.com/jobs/d62b975d-86f1-4678-9c0e-112ebe16abbd/images/a87a31f1a689480fceb9227d7aba4d316d6d5738c16fc0cfa72e68ba3d752239.png",
+      "category": "hero",
+      "description": "Cinematic rainy street outside cafe with amber neon glow"
+    },
+    {
+      "url": "https://static.prod-images.emergentagent.com/jobs/d62b975d-86f1-4678-9c0e-112ebe16abbd/images/b1f1a9fea453649b2334005cd58945b7f673a32168c36aea8439e79dc6c20822.png",
+      "category": "atmosphere",
+      "description": "Atmospheric interior of a dim, cozy cafe bar at night"
+    },
+    {
+      "url": "https://static.prod-images.emergentagent.com/jobs/d62b975d-86f1-4678-9c0e-112ebe16abbd/images/099455278eba5fe613ce0d4afbfef4f836daff75c2ace2bd6e8684aaa177d354.png",
+      "category": "product_chocolate_wine",
+      "description": "Gourmet chocolate truffles and wine on dark table"
+    },
+    {
+      "url": "https://images.pexels.com/photos/5659492/pexels-photo-5659492.jpeg",
+      "category": "product_beer",
+      "description": "Dark craft beer pour"
+    },
+    {
+      "url": "https://images.pexels.com/photos/27393960/pexels-photo-27393960.jpeg",
+      "category": "product_gift",
+      "description": "Luxury dark gift basket with champagne"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1766739347473-0036db7a8828",
+      "category": "product_icecream",
+      "description": "Rich dark chocolate ice cream texture"
+    },
+    {
+      "url": "https://static.prod-images.emergentagent.com/jobs/d62b975d-86f1-4678-9c0e-112ebe16abbd/images/bfdc18306883d10e3293029c17af0faf49a6d4bba3be4641e8a60f4fe451f1e2.png",
+      "category": "gallery_1",
+      "description": "Glowing orange neon sign on textured wall"
+    },
+    {
+      "url": "https://images.pexels.com/photos/30749922/pexels-photo-30749922.jpeg",
+      "category": "gallery_2",
+      "description": "Warm inviting street cafe exterior night"
+    },
+    {
+      "url": "https://images.pexels.com/photos/66234/praline-chocolates-chocolate-chocolatier-66234.jpeg",
+      "category": "gallery_3",
+      "description": "Macro shot of praline chocolates on dark glass"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1736154578145-3a57d1c4c9f8",
+      "category": "gallery_4",
+      "description": "Wine bottle and grapes dark aesthetic"
+    }
+  ],
+  "page_structure_and_content": [
+    {
+      "section": "Header",
+      "details": "Sticky glassmorphism nav with Logo 'LARSEN' and links: Produkter, Atmosfære, Anmeldelser, Galleri, Kontakt."
+    },
+    {
+      "section": "Hero",
+      "details": "Fullscreen hero. Use 'hero' image. Title: 'Hernings hyggeligste spot ✨'. Subtitle: 'Vin, chokolade, café og gode aftener samlet ét sted.' Buttons: 'Besøg LARSEN' and 'Se menu & favoritter'. Add ambient particle effect or subtle background floating gradient to simulate light leaks."
+    },
+    {
+      "section": "Featured Products",
+      "details": "Grid or horizontal scroller of dark cards showing: Gourmet chokolade, Specialøl, Vin & spiritus, Is og søde sager, Gavekurve. Use specific product images mapped above."
+    },
+    {
+      "section": "Atmosphere",
+      "details": "Split layout. Left: Large typography 'En skjult hygge-perle midt i Herning hvor folk mødes over kaffe, søde sager og gode vibes.' Right: 'atmosphere' image. Add glowing orange orb blur behind the text."
+    },
+    {
+      "section": "Reviews",
+      "details": "Cinematic carousel (Framer motion or pure CSS) with frosted glass cards. Quotes: 'Mega hyggeligt sted', 'Virkelig god service', 'Perfekt til en rolig kaffe', 'Fantastisk udvalg af vin og chokolade', 'En af Hernings hyggeligste butikker'. Font: Italic serif."
+    },
+    {
+      "section": "Gallery",
+      "details": "Bento 'Tetris' Grid combining gallery_1, gallery_2, gallery_3, and gallery_4 images. Mix 1 large span, 2 squares, 1 tall. No gaps between images or thick black gaps."
+    },
+    {
+      "section": "Location & Hours",
+      "details": "Embed Google Maps (styled dark with CSS filter: invert(90%) hue-rotate(180deg)). Next to it: 'Bredgade 48, Herning' and long opening hours text."
+    },
+    {
+      "section": "Footer",
+      "details": "Massive typography 'LARSEN'. Links to Instagram, Facebook, Kontakt. Deep dark background, minimal borders."
+    }
+  ],
+  "critical_rules": [
+    "ALL interactive elements MUST include data-testid attributes (e.g., data-testid='hero-cta-button').",
+    "NO placeholder images. Use ONLY the URLs provided in the image_urls array.",
+    "Do not use generic fonts like Inter or Roboto for headings. Use the specified Cormorant Garamond.",
+    "Ensure contrast ratios are met. Text over images must have a gradient overlay or text-shadow.",
+    "Do not use a flat blanket overlay that kills the entire hero image. Max overlay opacity bg-black/50.",
+    "Provide a smooth scrolling experience using Lenis or Framer Motion.",
+    "Files are in .js, provide implementation for Javascript React (.js/.jsx) NOT TypeScript."
+  ]
+}
