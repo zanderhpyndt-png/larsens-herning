@@ -21,7 +21,7 @@ export default function Landing() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-neutral-950 text-neutral-50 overflow-hidden" data-testid="landing-root">
+    <div className="relative min-h-screen bg-neutral-950 text-neutral-50" data-testid="landing-root">
       {loading && <Loader />}
       <MouseGlow />
       <Particles />
