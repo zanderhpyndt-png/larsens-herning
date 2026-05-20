@@ -33,21 +33,24 @@ export default function AboutTorben() {
             <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-amber-500/40 via-orange-500/20 to-transparent blur-2xl" />
             <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-amber-400/20">
               <img
-                src={images.torbenPortrait}
-                alt="Torben Larsen — ejer af LARSEN Herning City"
+                src={images.storefrontReal}
+                alt="LARSEN — startet af Torben Larsen i 2020"
                 className="w-full h-full object-cover"
+                style={{ filter: "contrast(1.05) saturate(1.05) brightness(0.92)" }}
                 loading="lazy"
               />
-              {/* Warm cinematic overlay + film grain */}
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(245,158,11,0.18),transparent_60%)] mix-blend-overlay" />
+              {/* Warm cinematic gradient + film grain */}
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(245,158,11,0.22),transparent_55%)] mix-blend-overlay" />
               <div
-                className="absolute inset-0 opacity-[0.18] mix-blend-overlay pointer-events-none"
+                className="absolute inset-0 opacity-[0.14] mix-blend-overlay pointer-events-none"
                 style={{
                   backgroundImage:
                     "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>\")",
                 }}
               />
+              {/* Vignette */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(0,0,0,0.5)_100%)]" />
             </div>
 
             {/* Floating signature card */}

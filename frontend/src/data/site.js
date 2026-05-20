@@ -11,8 +11,8 @@ export const images = {
   storefrontReal: "https://customer-assets.emergentagent.com/job_larsen-herning/artifacts/2nurby33_image.png",
   visitDenmark: "https://gdkfiles.visitdenmark.com/files/471/320316_Larsen-Herning-City---Foto-Herning-City---1024x576.jpg",
   voresBy: "https://assets.vorescdn.dk/vores-by/f2735d82-6f81-4e95-9180-4efd9103f901.jpg",
-  // Generated cinematic portrait
-  torbenPortrait: "/torben-portrait.jpg",
+  // ⚠️ AI portrait kept private until real photo arrives. To restore: rename file in /public and use "/torben-portrait.jpg"
+  // torbenPortrait: "/torben-portrait.jpg",
   // Cinematic accent shots
   gallery1: "https://static.prod-images.emergentagent.com/jobs/d62b975d-86f1-4678-9c0e-112ebe16abbd/images/bfdc18306883d10e3293029c17af0faf49a6d4bba3be4641e8a60f4fe451f1e2.png",
   gallery2: "https://images.pexels.com/photos/30749922/pexels-photo-30749922.jpeg",
