@@ -65,11 +65,11 @@ export const reviews = [
 ];
 
 export const gallery = [
-  { src: images.storefrontReal, alt: "LARSEN butikkens facade på Bredgade 48", span: "lg" },
+  { src: images.voresBy, alt: "LARSEN butikken udefra", span: "lg" },
   { src: images.gallery1, alt: "Glowing orange neon sign", span: "md" },
   { src: images.gallery3, alt: "Macro praline chocolates", span: "sm" },
-  { src: images.visitDenmark, alt: "LARSEN Herning City facade", span: "tall" },
-  { src: images.voresBy, alt: "LARSEN butikken udefra", span: "md" },
+  { src: images.gallery2, alt: "Warm street cafe at night", span: "tall" },
+  { src: images.chocolateWine, alt: "Chocolate and wine pairing", span: "md" },
   { src: images.gallery4, alt: "Wine bottle dark aesthetic", span: "sm" },
 ];
 
@@ -86,6 +86,7 @@ export const socials = {
 export const navLinks = [
   { id: "produkter", label: "Produkter" },
   { id: "atmosfaere", label: "Atmosfære" },
+  { id: "om-os", label: "Om os" },
   { id: "anmeldelser", label: "Anmeldelser" },
   { id: "galleri", label: "Galleri" },
   { id: "kontakt", label: "Kontakt" },

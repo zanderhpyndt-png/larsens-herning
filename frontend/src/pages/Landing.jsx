@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Products from "@/components/Products";
 import Atmosphere from "@/components/Atmosphere";
+import AboutTorben from "@/components/AboutTorben";
 import Reviews from "@/components/Reviews";
 import Gallery from "@/components/Gallery";
 import LocationHours from "@/components/LocationHours";
@@ -36,6 +37,7 @@ export default function Landing() {
         <Hero />
         <Products />
         <Atmosphere />
+        <AboutTorben />
         <Reviews />
         <Gallery />
         <LocationHours />

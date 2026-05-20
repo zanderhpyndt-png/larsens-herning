@@ -17,13 +17,13 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src={images.hero}
-          alt="Rainy night outside LARSEN cafe in Herning"
+          src={images.visitDenmark}
+          alt="LARSEN Herning City facade om aftenen"
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-neutral-950" />
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-neutral-950" />
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/85 via-neutral-950/20 to-transparent" />
         <div className="rain" />
       </div>
 
