@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Loader from "@/components/Loader";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import StoryHighlights from "@/components/StoryHighlights";
 import Products from "@/components/Products";
 import Atmosphere from "@/components/Atmosphere";
 import AboutTorben from "@/components/AboutTorben";
@@ -12,6 +13,7 @@ import ContactNewsletter from "@/components/ContactNewsletter";
 import Footer from "@/components/Footer";
 import MouseGlow from "@/components/MouseGlow";
 import Particles from "@/components/Particles";
+import AmbientSound from "@/components/AmbientSound";
 
 export default function Landing() {
   const [loading, setLoading] = useState(true);
@@ -35,6 +37,7 @@ export default function Landing() {
       <Header />
       <main className="relative z-10">
         <Hero />
+        <StoryHighlights />
         <Products />
         <Atmosphere />
         <AboutTorben />
@@ -44,6 +47,7 @@ export default function Landing() {
         <ContactNewsletter />
       </main>
       <Footer />
+      <AmbientSound />
     </div>
   );
 }

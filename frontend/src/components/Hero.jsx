@@ -1,8 +1,20 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { ArrowDown, MapPin } from "lucide-react";
 import { images } from "@/data/site";
 
 export default function Hero() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  // Parallax transforms for glow + image
+  const glowY = useTransform(scrollYProgress, [0, 1], [0, 220]);
+  const glowX = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 0.6], [0, 0.4]);
+
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -11,24 +23,36 @@ export default function Hero() {
   return (
     <section
       id="hero"
+      ref={ref}
       className="relative min-h-screen w-full overflow-hidden flex items-end md:items-center"
       data-testid="hero-section"
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
+      {/* Background image with parallax */}
+      <motion.div className="absolute inset-0" style={{ y: imageY }}>
         <img
           src={images.visitDenmark}
           alt="LARSEN Herning City facade om aftenen"
-          className="w-full h-full object-cover"
+          className="w-full h-[115%] object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-neutral-950" />
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/85 via-neutral-950/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/80 via-neutral-950/60 to-neutral-950" />
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-neutral-950/40 to-neutral-950/20" />
+        <motion.div
+          className="absolute inset-0 bg-neutral-950"
+          style={{ opacity: overlayOpacity }}
+        />
         <div className="rain" />
-      </div>
+      </motion.div>
 
-      {/* Floating amber glow */}
-      <div className="absolute right-[5%] top-[30%] light-leak bg-amber-500/30 w-[400px] h-[400px]" />
+      {/* Floating amber glow with parallax */}
+      <motion.div
+        className="absolute right-[5%] top-[30%] light-leak bg-amber-500/30 w-[400px] h-[400px]"
+        style={{ y: glowY, x: glowX }}
+      />
+      <motion.div
+        className="absolute left-[-100px] top-[60%] light-leak bg-orange-600/20 w-[500px] h-[500px]"
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -180]) }}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32 md:py-0 w-full">
         <motion.div
@@ -37,9 +61,14 @@ export default function Hero() {
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 1.6 }}
           className="max-w-3xl"
         >
-          <div className="flex items-center gap-3 text-xs uppercase tracking-eyebrow text-amber-400/90 mb-6">
-            <span className="w-2 h-2 rounded-full bg-amber-400 box-glow-amber pulse-glow" />
-            <span>Bredgade 48 · Herning</span>
+          <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-eyebrow text-amber-400/90 mb-6">
+            <span className="inline-flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-amber-400 box-glow-amber pulse-glow" />
+              Bredgade 48 · Herning
+            </span>
+            <span className="inline-flex items-center glass-light rounded-full px-3 py-1 text-[10px] tracking-[0.25em] text-amber-300" data-testid="since-2020-badge">
+              ✦ Since 2020
+            </span>
           </div>
 
           <h1
