@@ -99,7 +99,7 @@ export default function LocationHours() {
                 ))}
               </ul>
               <div className="mt-5 pt-5 border-t border-white/5 text-[11px] uppercase tracking-eyebrow text-neutral-500">
-                Sene aftener — året rundt
+                Altid åben — alle årets dage
               </div>
             </div>
           </motion.div>

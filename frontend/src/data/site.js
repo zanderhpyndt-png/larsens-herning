@@ -7,6 +7,11 @@ export const images = {
   beer: "https://images.pexels.com/photos/5659492/pexels-photo-5659492.jpeg",
   giftBasket: "https://images.pexels.com/photos/27393960/pexels-photo-27393960.jpeg",
   iceCream: "https://images.unsplash.com/photo-1766739347473-0036db7a8828",
+  // Real LARSEN photos
+  storefrontReal: "https://customer-assets.emergentagent.com/job_larsen-herning/artifacts/2nurby33_image.png",
+  visitDenmark: "https://gdkfiles.visitdenmark.com/files/471/320316_Larsen-Herning-City---Foto-Herning-City---1024x576.jpg",
+  voresBy: "https://assets.vorescdn.dk/vores-by/f2735d82-6f81-4e95-9180-4efd9103f901.jpg",
+  // Cinematic accent shots
   gallery1: "https://static.prod-images.emergentagent.com/jobs/d62b975d-86f1-4678-9c0e-112ebe16abbd/images/bfdc18306883d10e3293029c17af0faf49a6d4bba3be4641e8a60f4fe451f1e2.png",
   gallery2: "https://images.pexels.com/photos/30749922/pexels-photo-30749922.jpeg",
   gallery3: "https://images.pexels.com/photos/66234/praline-chocolates-chocolate-chocolatier-66234.jpeg",
@@ -60,20 +65,23 @@ export const reviews = [
 ];
 
 export const gallery = [
-  { src: images.gallery1, alt: "Glowing orange neon sign", span: "lg" },
-  { src: images.gallery2, alt: "Warm street cafe at night", span: "md" },
+  { src: images.storefrontReal, alt: "LARSEN butikkens facade på Bredgade 48", span: "lg" },
+  { src: images.gallery1, alt: "Glowing orange neon sign", span: "md" },
   { src: images.gallery3, alt: "Macro praline chocolates", span: "sm" },
-  { src: images.gallery4, alt: "Wine bottle dark aesthetic", span: "tall" },
-  { src: images.atmosphere, alt: "Cozy interior of LARSEN", span: "md" },
-  { src: images.chocolateWine, alt: "Chocolate and wine pairing", span: "sm" },
+  { src: images.visitDenmark, alt: "LARSEN Herning City facade", span: "tall" },
+  { src: images.voresBy, alt: "LARSEN butikken udefra", span: "md" },
+  { src: images.gallery4, alt: "Wine bottle dark aesthetic", span: "sm" },
 ];
 
 export const openingHours = [
-  { day: "Mandag — Torsdag", hours: "10:00 — 22:00" },
-  { day: "Fredag", hours: "10:00 — 24:00" },
-  { day: "Lørdag", hours: "10:00 — 24:00" },
-  { day: "Søndag", hours: "12:00 — 20:00" },
+  { day: "Mandag — Søndag", hours: "10:00 — 22:00" },
+  { day: "Alle årets dage", hours: "Vi har altid åbent" },
 ];
+
+export const socials = {
+  facebook: "https://www.facebook.com/LarsenHerningCity",
+  instagram: "#",
+};
 
 export const navLinks = [
   { id: "produkter", label: "Produkter" },

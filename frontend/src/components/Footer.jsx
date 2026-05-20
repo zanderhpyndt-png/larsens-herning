@@ -1,5 +1,5 @@
 import { Instagram, Facebook, MapPin, Mail } from "lucide-react";
-import { navLinks } from "@/data/site";
+import { navLinks, socials } from "@/data/site";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -22,16 +22,20 @@ export default function Footer() {
             <div className="text-[10px] uppercase tracking-eyebrow text-amber-400/70 mb-4">Følg os</div>
             <div className="flex items-center gap-3">
               <a
-                href="#"
+                href={socials.instagram}
                 aria-label="Instagram"
+                target="_blank"
+                rel="noreferrer"
                 className="w-11 h-11 glass-light rounded-full flex items-center justify-center hover:border-amber-400/40 hover:text-amber-400 text-neutral-300 transition"
                 data-testid="footer-instagram"
               >
                 <Instagram size={18} />
               </a>
               <a
-                href="#"
+                href={socials.facebook}
                 aria-label="Facebook"
+                target="_blank"
+                rel="noreferrer"
                 className="w-11 h-11 glass-light rounded-full flex items-center justify-center hover:border-amber-400/40 hover:text-amber-400 text-neutral-300 transition"
                 data-testid="footer-facebook"
               >
